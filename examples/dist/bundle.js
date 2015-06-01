@@ -712,13 +712,13 @@ var Select = React.createClass({
 			if (op.disabled) {
 				return React.createElement(
 					'div',
-					{ ref: ref, key: 'option-' + op.key || op.value, className: optionClass },
+					{ ref: ref, key: 'option-' + (typeof op.key !== 'undefined') ? op.key : op.value, className: optionClass },
 					op.label
 				);
 			} else {
 				return React.createElement(
 					'div',
-					{ ref: ref, key: 'option-' + op.key || op.value, className: optionClass, onMouseEnter: mouseEnter, onMouseLeave: mouseLeave, onMouseDown: mouseDown, onClick: mouseDown },
+					{ ref: ref, key: 'option-' + (typeof op.key !== 'undefined') ? op.key : op.value, className: optionClass, onMouseEnter: mouseEnter, onMouseLeave: mouseLeave, onMouseDown: mouseDown, onClick: mouseDown },
 					op.create ? 'Add ' + op.label + ' ?' : op.label
 				);
 			}
